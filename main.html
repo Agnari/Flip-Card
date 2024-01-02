@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <h1>Memory Cards</h1>
+    <div class="inside-content">
+        <p class="score">Score: <span class="score-value">0</span></p>
+        <p class="timer">Time Left: 60s</p>
+    </div>
+    <div class="grid-container"></div>
+    <button class="menuBtn" onclick="showMenu()">Menu</button>
+
+    <div id="popup-menu" class="popup">
+        <p class="pop-name">Menu</p>
+        <div class="btn-container">
+            <button class="defaultBtn" onclick="showLeaderboard()">Leaderboard</button>
+            <button class="defaultBtn" onclick="showDifficulty()">Difficulty</button>
+            <button class="defaultBtn" onclick="restart()">Restart</button>
+            <button class="closeBtn" onclick="closeMenu()">X</button>
+        </div>
+    </div>
+
+    <div id="difficulty-menu" class="popup">
+        <p class="pop-name">Choose Difficulty</p>
+        <div class="btn-container">
+            <button class="defaultBtn" onclick="setDifficulty('easy')">Easy</button>
+            <button class="defaultBtn" onclick="setDifficulty('medium')">Medium</button>
+            <button class="defaultBtn" onclick="setDifficulty('hard')">Hard</button>
+            <button class="closeBtn" onclick="closeDifficulty()">X</button>
+        </div>
+    </div>
+
+    <div id="winWindow" class="popup">
+        <p class="result-name">You won!</p>
+        <p class="score-display">Your score:</p>
+        <div class="btn-container result">
+            <button class="resultBtn" onclick="restart()">Restart</button>
+            <button class="closeResult" onclick="closeWin()">X</button>
+        </div>
+    </div>
+
+    <div id="loseWindow" class="popup">
+        <p class="result-name">Time's up!</p>
+        <p class="score-display">Your score:</p>
+        <div class="btn-container result">
+            <button class="resultBtn" onclick="restart()">Try again</button>
+            <button class="closeResult" onclick="closeLose()">X</button>
+        </div>
+    </div>
+
+    <div id="namePopup" class="popup">
+        <p>Enter your name:</p>
+        <input type="text" id="playerNameInput" />
+        <button class="defaultBtn" onclick="submitPlayerName()">Start Game</button>
+    </div>
+
+    <div id="leaderboard" class="popup">
+        <p class="pop-name">Leaderboard</p>
+        <div class="lead-list">
+            <p class="list-difficulty">Easy</p>
+            <li id="easyLeaderboard"></li>
+            <p class="list-difficulty">Medium</p>
+            <li id="mediumLeaderboard"></li>
+            <p class="list-difficulty">Hard</p>
+            <li id="hardLeaderboard"></li>
+        </div>
+        <div class="btn-container">
+            <button class="closeBtn" onclick="closeLeaderboard()">X</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
